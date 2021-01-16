@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name reed_fix)(type KiCad)(uri ${KIPRJMOD}/reed_fix.pretty)(options "")(descr ""))
+)
