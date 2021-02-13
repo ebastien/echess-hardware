@@ -2,3 +2,8 @@
 fp-info-cache
 *-cache.lib
 sym-lib-table
+*.3mf
+*.stl
+*.gcode
+*.bck
+fp-lib-table
