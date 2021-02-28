@@ -42,12 +42,12 @@ $EndComp
 $Comp
 L Connector:Conn_01x04_Male J10
 U 1 1 5FF96D1A
-P 1850 6850
-F 0 "J10" H 1950 7100 50  0000 C CNN
-F 1 "OLED_Display" H 2000 6550 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1850 6850 50  0001 C CNN
-F 3 "~" H 1850 6850 50  0001 C CNN
-	1    1850 6850
+P 2550 9350
+F 0 "J10" H 2650 9600 50  0000 C CNN
+F 1 "OLED_Display" H 2700 9050 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 2550 9350 50  0001 C CNN
+F 3 "~" H 2550 9350 50  0001 C CNN
+	1    2550 9350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -127,16 +127,14 @@ F 3 "" H 7650 6550 50  0001 C CNN
 	1    7650 6550
 	1    0    0    -1  
 $EndComp
-Text Label 13300 2100 2    50   ~ 0
-INT4
 NoConn ~ 7350 2000
-Text Label 2050 7050 0    50   ~ 0
+Text Label 2750 9550 0    50   ~ 0
 SDA
-Text Label 2050 6950 0    50   ~ 0
+Text Label 2750 9450 0    50   ~ 0
 SCK
-Text Label 2050 6850 0    50   ~ 0
+Text Label 2750 9350 0    50   ~ 0
 VCC
-Text Label 2050 6750 0    50   ~ 0
+Text Label 2750 9250 0    50   ~ 0
 GND
 $Comp
 L 74hc32:74HC32 U1
@@ -248,17 +246,6 @@ Wire Wire Line
 	2300 3300 2300 3350
 NoConn ~ 1600 2000
 NoConn ~ 13300 2000
-$Comp
-L Interface_Expansion:MCP23017_SP PE4
-U 1 1 5FF1903D
-P 14000 2200
-F 0 "PE4" H 13600 3200 50  0000 C CNN
-F 1 "MCP23017_SP" H 14300 3200 50  0000 C CNN
-F 2 "Package_DIP:DIP-28_W7.62mm_Socket" H 14200 1200 50  0001 L CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 14200 1100 50  0001 L CNN
-	1    14000 2200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	14000 3350 14000 3300
 Wire Wire Line
@@ -421,8 +408,6 @@ Wire Wire Line
 	6250 6950 6150 6950
 Text Label 6150 6850 0    50   ~ 0
 INT3
-Text Label 6150 6550 0    50   ~ 0
-INT4
 Wire Wire Line
 	6150 7050 6350 7050
 Wire Wire Line
@@ -1234,12 +1219,6 @@ Text Label 3300 7750 2    50   ~ 0
 GND
 NoConn ~ 4300 6750
 NoConn ~ 4300 6850
-NoConn ~ 4300 6550
-NoConn ~ 4300 7150
-NoConn ~ 4300 7250
-NoConn ~ 4300 7350
-NoConn ~ 4300 7450
-NoConn ~ 4300 7550
 NoConn ~ 4300 7650
 NoConn ~ 4300 7750
 NoConn ~ 4300 7850
@@ -1253,10 +1232,6 @@ NoConn ~ 3300 7950
 NoConn ~ 3300 7850
 NoConn ~ 3300 7650
 NoConn ~ 3300 7550
-NoConn ~ 3300 7450
-NoConn ~ 3300 7350
-NoConn ~ 3300 7250
-NoConn ~ 3300 7050
 NoConn ~ 3300 6950
 NoConn ~ 3300 6850
 NoConn ~ 3300 6750
@@ -1293,4 +1268,159 @@ Wire Wire Line
 	2600 8250 3300 8250
 Text Label 3300 7150 2    50   ~ 0
 INT
+$Comp
+L Interface_Expansion:MCP23017_SP PE4
+U 1 1 5FF1903D
+P 14000 2200
+F 0 "PE4" H 13600 3200 50  0000 C CNN
+F 1 "MCP23017_SP" H 14300 3200 50  0000 C CNN
+F 2 "Package_DIP:DIP-28_W7.62mm_Socket" H 14200 1200 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 14200 1100 50  0001 L CNN
+	1    14000 2200
+	1    0    0    -1  
+$EndComp
+NoConn ~ 13300 2100
+$Comp
+L Transistor_BJT:BC548 Q1
+U 1 1 603CBF53
+P 5600 9500
+F 0 "Q1" H 5791 9546 50  0000 L CNN
+F 1 "BC548" H 5791 9455 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5800 9425 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 5600 9500 50  0001 L CNN
+	1    5600 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 603CD433
+P 5000 9500
+F 0 "R1" V 4793 9500 50  0000 C CNN
+F 1 "680" V 4884 9500 50  0000 C CNN
+F 2 "" V 4930 9500 50  0001 C CNN
+F 3 "~" H 5000 9500 50  0001 C CNN
+	1    5000 9500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_POT RV1
+U 1 1 603CF051
+P 5550 8700
+F 0 "RV1" H 5480 8746 50  0000 R CNN
+F 1 "1K" H 5480 8655 50  0000 R CNN
+F 2 "" H 5550 8700 50  0001 C CNN
+F 3 "~" H 5550 8700 50  0001 C CNN
+	1    5550 8700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0125
+U 1 1 603D0B41
+P 5700 9950
+F 0 "#PWR0125" H 5700 9700 50  0001 C CNN
+F 1 "GND" H 5705 9777 50  0000 C CNN
+F 2 "" H 5700 9950 50  0001 C CNN
+F 3 "" H 5700 9950 50  0001 C CNN
+	1    5700 9950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 9700 5700 9950
+$Comp
+L power:+3V3 #PWR0126
+U 1 1 603DA113
+P 5550 8500
+F 0 "#PWR0126" H 5550 8350 50  0001 C CNN
+F 1 "+3V3" H 5565 8673 50  0000 C CNN
+F 2 "" H 5550 8500 50  0001 C CNN
+F 3 "" H 5550 8500 50  0001 C CNN
+	1    5550 8500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5550 8850
+Wire Wire Line
+	5400 9500 5150 9500
+Text Label 4850 9500 2    50   ~ 0
+BUZ
+Text Label 6150 6550 0    50   ~ 0
+GND
+$Comp
+L Device:Rotary_Encoder_Switch SW1
+U 1 1 603FDEB6
+P 7800 9450
+F 0 "SW1" H 7800 9817 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 7800 9726 50  0000 C CNN
+F 2 "" H 7650 9610 50  0001 C CNN
+F 3 "~" H 7800 9710 50  0001 C CNN
+	1    7800 9450
+	1    0    0    -1  
+$EndComp
+Text Label 7500 9450 2    50   ~ 0
+GND
+Text Label 7500 9350 2    50   ~ 0
+RTA
+Text Label 7500 9550 2    50   ~ 0
+RTB
+Text Label 8100 9550 0    50   ~ 0
+GND
+Text Label 8100 9350 0    50   ~ 0
+RTS
+Text Label 3300 7250 2    50   ~ 0
+RTA
+Text Label 3300 7350 2    50   ~ 0
+RTB
+$Comp
+L Connector:Conn_01x06_Male J12
+U 1 1 6040A920
+P 1850 9450
+F 0 "J12" H 1950 9800 50  0000 C CNN
+F 1 "SD_Adapter" H 2000 9000 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 1850 9450 50  0001 C CNN
+F 3 "~" H 1850 9450 50  0001 C CNN
+	1    1850 9450
+	1    0    0    -1  
+$EndComp
+Text Label 2050 9250 0    50   ~ 0
+GND
+Text Label 2050 9350 0    50   ~ 0
+VCC
+Text Label 2050 9450 0    50   ~ 0
+MISO
+Text Label 2050 9550 0    50   ~ 0
+MOSI
+Text Label 2050 9650 0    50   ~ 0
+SPICLK
+Text Label 2050 9750 0    50   ~ 0
+SPICS
+Text Label 4300 6550 0    50   ~ 0
+MOSI
+Text Label 4300 7150 0    50   ~ 0
+MISO
+Text Label 4300 7250 0    50   ~ 0
+SPICLK
+Text Label 4300 7350 0    50   ~ 0
+SPICS
+Text Label 3300 7050 2    50   ~ 0
+BUZ
+Text Label 3300 7450 2    50   ~ 0
+RTS
+NoConn ~ 4300 7450
+NoConn ~ 4300 7550
+$Comp
+L Device:Buzzer BZ1
+U 1 1 604392FA
+P 5800 9050
+F 0 "BZ1" H 5952 9079 50  0000 L CNN
+F 1 "Buzzer" H 5952 8988 50  0000 L CNN
+F 2 "" V 5775 9150 50  0001 C CNN
+F 3 "~" V 5775 9150 50  0001 C CNN
+	1    5800 9050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 8500 5550 8550
+Wire Wire Line
+	5700 8700 5700 8950
+Wire Wire Line
+	5700 9150 5700 9300
 $EndSCHEMATC
