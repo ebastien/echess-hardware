@@ -45,7 +45,7 @@ U 1 1 5FF96D1A
 P 2550 9350
 F 0 "J10" H 2650 9600 50  0000 C CNN
 F 1 "Display" H 2700 9050 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 2550 9350 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" H 2550 9350 50  0001 C CNN
 F 3 "~" H 2550 9350 50  0001 C CNN
 	1    2550 9350
 	1    0    0    -1  
@@ -128,13 +128,13 @@ F 3 "" H 7650 6550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 7350 2000
-Text Label 2750 9550 0    50   ~ 0
-SDA
-Text Label 2750 9450 0    50   ~ 0
-SCK
-Text Label 2750 9350 0    50   ~ 0
-VCC
 Text Label 2750 9250 0    50   ~ 0
+SDA
+Text Label 2750 9350 0    50   ~ 0
+SCK
+Text Label 2750 9450 0    50   ~ 0
+VCC
+Text Label 2750 9550 0    50   ~ 0
 GND
 $Comp
 L 74hc32:74HC32 U1
@@ -1236,32 +1236,16 @@ NoConn ~ 3300 6550
 $Comp
 L Connector:Conn_01x02_Male J11
 U 1 1 60317B15
-P 1850 8150
-F 0 "J11" H 1958 8331 50  0000 C CNN
-F 1 "Power_Jack" H 1950 7950 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1900 8110 50  0001 C CNN
-F 3 "~" H 1900 8110 50  0001 C CNN
-	1    1850 8150
+P 900 9250
+F 0 "J11" H 1008 9431 50  0000 C CNN
+F 1 "Power" H 1000 9050 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal" H 950 9210 50  0001 C CNN
+F 3 "~" H 950 9210 50  0001 C CNN
+	1    900  9250
 	1    0    0    -1  
 $EndComp
-Text Label 2050 8150 0    50   ~ 0
+Text Label 1100 9350 0    50   ~ 0
 GND
-Wire Wire Line
-	2050 8250 2600 8250
-$Comp
-L power:PWR_FLAG #FLG0103
-U 1 1 60328BA2
-P 2600 8250
-F 0 "#FLG0103" H 2600 8325 50  0001 C CNN
-F 1 "PWR_FLAG" H 2600 8423 50  0000 C CNN
-F 2 "" H 2600 8250 50  0001 C CNN
-F 3 "~" H 2600 8250 50  0001 C CNN
-	1    2600 8250
-	1    0    0    -1  
-$EndComp
-Connection ~ 2600 8250
-Wire Wire Line
-	2600 8250 3300 8250
 Text Label 3300 7150 2    50   ~ 0
 INT
 $Comp
@@ -1349,8 +1333,8 @@ L Connector:Conn_01x06_Male J12
 U 1 1 6040A920
 P 1850 9450
 F 0 "J12" H 1950 9800 50  0000 C CNN
-F 1 "SD" H 2000 9000 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 1850 9450 50  0001 C CNN
+F 1 "SD" H 2000 9050 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal" H 1850 9450 50  0001 C CNN
 F 3 "~" H 1850 9450 50  0001 C CNN
 	1    1850 9450
 	1    0    0    -1  
@@ -1430,19 +1414,36 @@ U 1 1 60405FA4
 P 3200 9450
 F 0 "J13" H 3300 9800 50  0000 C CNN
 F 1 "Dial" H 3350 9150 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 3200 9450 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal" H 3200 9450 50  0001 C CNN
 F 3 "~" H 3200 9450 50  0001 C CNN
 	1    3200 9450
 	1    0    0    -1  
 $EndComp
-Text Label 3400 9350 0    50   ~ 0
-GND
-Text Label 3400 9250 0    50   ~ 0
-RTA
-Text Label 3400 9450 0    50   ~ 0
-RTB
 Text Label 3400 9550 0    50   ~ 0
 GND
 Text Label 3400 9650 0    50   ~ 0
+RTA
+Text Label 3400 9450 0    50   ~ 0
+RTB
+Text Label 3400 9350 0    50   ~ 0
+GND
+Text Label 3400 9250 0    50   ~ 0
 RTS
+Text Label 1100 9250 0    50   ~ 0
+5V
+Text Label 3300 8250 2    50   ~ 0
+5V
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 6047B23B
+P 1400 9250
+F 0 "#FLG0103" H 1400 9325 50  0001 C CNN
+F 1 "PWR_FLAG" H 1400 9423 50  0000 C CNN
+F 2 "" H 1400 9250 50  0001 C CNN
+F 3 "~" H 1400 9250 50  0001 C CNN
+	1    1400 9250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 9250 1100 9250
 $EndSCHEMATC
